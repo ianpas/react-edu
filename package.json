@@ -4,7 +4,8 @@
   "description": "rigid is react for learning purpose",
   "main": "main.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "gulp build"
   },
   "author": "ianpas",
   "license": "MIT",
