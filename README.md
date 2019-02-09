@@ -4,12 +4,16 @@ This project is inspired by this article: [Gooact: React in 160 lines of JavaScr
 # Scope
 Instead of writing another demo of react, this project focuses on code quality. I tried hard to make code readable, maintainable and scalable. Main features of this project are:
 
-* developed with typescript and unit test
-* all examples come from official react tutorial and documentation
+* Developed with typescript and unit test
+* All examples come from official react tutorial and documentation
 
-Currently, it's capable of running all examples in react documentation [Main Concepts](https://reactjs.org/docs/hello-world.html) part and the [tic-tac-toe game](https://reactjs.org/tutorial/tutorial.html) in tutorial part .
+Currently, it's capable of running all examples in react documentation [Main Concepts](https://reactjs.org/docs/hello-world.html) part and the tic-tac-toe game in [tutorial](https://reactjs.org/tutorial/tutorial.html) part .
 
 # Examples
+
+For ease of reference, links in react documentation to codepen are listed parallel with rigid implementations. 
+
+Since the APIs are almost the same (eg. differ in naming convension, such as setState and SetState), source code of examples are almost the same and they are placed in /example folder.
 
 | Main Concepts                                                                              	| Rigid                                                                                                                                                             	| React                                                                                                                                                                                 	|
 |--------------------------------------------------------------------------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
@@ -24,3 +28,46 @@ Currently, it's capable of running all examples in react documentation [Main Con
 | [11. Composition vs Inheritance](https://reactjs.org/docs/composition-vs-inheritance.html) 	| [react-11-composition-vs-inheritance](https://ianpas.github.io/react-edu/react-11-composition-vs-inheritance/)                                                    	| [codepen](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)                                                                                                                         	|
 | [12. Thinking In React](https://reactjs.org/docs/thinking-in-react.html)                   	| [react-12-thinking-in-react](https://ianpas.github.io/react-edu/react-12-thinking-in-react/)                                                                      	| [codepen](https://codepen.io/gaearon/pen/LzWZvb)                                                                                                                                      	|
 | [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)                     	| [react-tutorial-tic-tac-toe](https://ianpas.github.io/react-edu/react-tutorial-tic-tac-toe/)                                                                      	| [codepen](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)                                                                                                                         	|
+
+# Project structure
+
+* /example : source code of examples
+* /public : examples are built and placed here
+* /src : 
+  * /src/common : common utility functions
+  * /src/element : create rigit element, JSX will be translated into CreateElement
+  * /src/component : rigid component class def
+  * /src/renderer : take vdom in, return rendered dom
+  * /src/patcher : take dom and vdom in, return patched
+* /test :
+  * /test/common: utility for building vdom data
+  * /test/rendering: test rendering
+  * /test/patch: test patching
+
+# Code coverage
+
+[coverage report](https://ianpas.github.io/react-edu/coverage/lcov-report/index.html)
+
+# Local setup
+
+Run "npm install" to install packages required by this project.
+
+```
+$ npm install
+```
+
+You may want to run "npm run build" to generate aforementioned examples in /public folder, and then explore the code.
+
+```
+$ npm run build
+```
+
+To run unit test:
+
+```
+$ npm test
+```
+
+# License
+
+MIT
